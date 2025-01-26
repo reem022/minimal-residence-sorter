@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Link, QrCode, Share2 } from "lucide-react";
-import QRCode from "qrcode.react";
+import { QRCodeSVG } from "qrcode.react";
 import { toast } from "sonner";
 
 export interface Property {
@@ -71,7 +71,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
                 <DialogTitle>Scan QR Code for 3D View</DialogTitle>
               </DialogHeader>
               <div className="flex flex-col items-center gap-4 p-4">
-                <QRCode value={visualizationUrl} size={200} />
+                <QRCodeSVG value={visualizationUrl} size={200} />
                 <p className="text-sm text-muted-foreground">{visualizationUrl}</p>
               </div>
             </DialogContent>
