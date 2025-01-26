@@ -50,7 +50,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
         <p className="text-2xl font-semibold text-primary">
           {formatPrice(property.price)}
         </p>
-        <div className="flex items-center gap-4 text-sm text-muted">
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <span>{property.beds} Beds</span>
           <span>•</span>
           <span>Layout {property.layout}</span>
@@ -92,6 +92,8 @@ export function PropertyCard({ property }: PropertyCardProps) {
                   title: property.title,
                   text: `Check out this property: ${property.title}`,
                   url: visualizationUrl,
+                }).catch(() => {
+                  handleCopyLink();
                 });
               } else {
                 handleCopyLink();
