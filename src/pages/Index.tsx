@@ -19,6 +19,13 @@ const SAMPLE_PROPERTIES: Property[] = Array.from({ length: 62 }, (_, index) => {
   const baseSqft = 800;
   const sqft = baseSqft + (beds - 1) * 400;
 
+  // Use actual Unsplash images that cycle through 3 different property images
+  const imageOptions = [
+    'https://images.unsplash.com/photo-1568605114967-8130f3a36994',
+    'https://images.unsplash.com/photo-1570129477492-45c003edd2be',
+    'https://images.unsplash.com/photo-1512917774080-9991f1c4c750'
+  ];
+  
   return {
     id: `prop-${index + 1}`,
     title: `${beds} Bed ${layout}-Type Unit ${index + 1}`,
@@ -26,7 +33,7 @@ const SAMPLE_PROPERTIES: Property[] = Array.from({ length: 62 }, (_, index) => {
     beds,
     layout,
     sqft,
-    image: `https://images.unsplash.com/photo-${1600000000000 + index}?auto=format&fit=crop&q=80`,
+    image: `${imageOptions[index % imageOptions.length]}?auto=format&fit=crop&w=800&q=80`,
   };
 });
 
